@@ -1,0 +1,21 @@
+<div *ngIf="!finishedQuestions">
+  <div class="container-questions">
+    <div class="label-question">{{ questions[currentQuestion].question }}</div>
+    <input class="input-question" type="text" [(ngModel)]="questionText" (keyup.enter)="onNextQuestion()">
+    <i (click)="onNextQuestion()" class="fa fa-arrow-right next-question" aria-hidden="true"></i>
+    <div class="step-question">
+        {{ currentQuestion + 1 }} / {{ questions.length }}
+    </div>
+  </div>
+</div>
+
+<div *ngIf="finishedQuestions">
+  <h1>Thanks all questions is over</h1>
+</div>
+
+<div class="container-responses">
+  <div class="label-responses">Responses:</div>
+  <div *ngFor="let response of responses">
+    {{ response.question }} : {{ response.response }}
+  </div>
+</div>
