@@ -19,6 +19,9 @@ export class SimpleQuestionFieldComponent implements OnInit {
     },
     {
       question: "How are you?"
+    },
+    {
+      question: "How are you?"
     }
   ]
 
